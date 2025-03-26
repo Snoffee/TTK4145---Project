@@ -120,13 +120,13 @@ func HRA() {
 		fmt.Println("json.Unmarshal error: ", err)
 		return
 	}
-
+	/*
 	fmt.Printf("output: \n")
 	for k, v := range *output {
 		fmt.Printf("%6v :  %+v\n", k, v)
 	}
 	fmt.Println((*output)[config.ElevatorInstance.ID])
-
+*/
 	config.MyQueue <- (*output)[config.ElevatorInstance.ID]
 
 }

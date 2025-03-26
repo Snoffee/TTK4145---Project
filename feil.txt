@@ -1,0 +1,33 @@
+App] Starting ElevatorApp...
+[Network] Started
+[MonitorNetwork] Started
+[Movementmonitor]: Started
+starting floor:  0
+starting floor:  0
+Peer update:
+  Peers:    ["1"]
+  New:      "1"
+  Lost:     []
+0
+{Floor:1 Button:2}
+[MovementMonitor] Elevator started moving. Timer reset.
+[MovementMonitor] Timeout: Elevator stuck between floors.
+[MovementMonitor] Requesting restart...
+[Main] Restart signal received. Restarting app...
+[App] Context canceled, waiting for components to stop...
+[Driver] Stopping light updates
+[Network] Shutting down transmitter goroutine.
+[MonitorNetwork] Shutting down gracefully
+[Network] Context cancelled, shutting down network listener.
+panic: Lost connection to Elevator Server
+
+goroutine 10 [running]:
+TTK4145---project/driver-go/elevio.read({0x6, 0x0, 0x0, 0x0})
+        /home/student/Documents/gr27/TTK4145---Project/driver-go/elevio/elevator_io.go:161 +0x127
+TTK4145---project/driver-go/elevio.GetButton(0x1312d00?, 0x0?)
+        /home/student/Documents/gr27/TTK4145---Project/driver-go/elevio/elevator_io.go:126 +0x26
+TTK4145---project/driver-go/elevio.PollButtons(0xc00001a460)
+        /home/student/Documents/gr27/TTK4145---Project/driver-go/elevio/elevator_io.go:79 +0x85
+created by TTK4145---project/driver-go.RunElevatorWithContext in goroutine 19
+        /home/student/Documents/gr27/TTK4145---Project/driver-go/driver.go:24 +0x105
+exit status 2
